@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Take a string of int or float and convert to tuple"""
+"""takes a string k and an int OR
+float v as arguments and returns
+a tuple.
+"""
 from typing import Tuple, Union
 
 
 def to_kv(k: str, v: [Union[int, float]]) -> Tuple[str, float]:
-    """Return tuple of str with float"""
+    """Return tuple"""
     return(k, float(v ** 2))
