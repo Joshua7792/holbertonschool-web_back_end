@@ -27,11 +27,12 @@ class Server:
         """Dataset indexed by sorting position, starting at 0"""
         if self.__indexed_dataset is None:
             dataset = self.dataset()
-            self.__indexed_dataset = {i: dataset[i] for i in range(len(dataset))}
+            self.__indexed_dataset\
+                = {i: dataset[i] for i in range(len(dataset))}
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Return a dictionary with pagination details and data after handling deletions."""
+        """Return a dictionary with pagination details and data."""
         assert isinstance(index, int) and index >= 0
         assert isinstance(page_size, int) and page_size > 0
 
@@ -45,7 +46,9 @@ class Server:
                 data.append(indexed_dataset[current_index])
             current_index += 1
 
-        next_index = current_index if current_index < dataset_size else None
+        next_index = None
+        if current_index < dataset_size:
+            next_index = current_index
 
         return {
             'index': index,
