@@ -3,6 +3,7 @@
 Module for simple helper function to implement pagination.
 """
 
+
 def index_range(page: int, page_size: int) -> tuple:
     """
     Calculate the start and end index for a range of items to paginate.
