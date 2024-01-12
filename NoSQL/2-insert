@@ -1,0 +1,2 @@
+// Insert a document with the name attribute set to 'Holberton school'
+db.school.insert({ name: "Holberton school" });
