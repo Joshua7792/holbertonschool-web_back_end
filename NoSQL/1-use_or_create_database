@@ -1,0 +1,2 @@
+// This script will create or switch to the 'my_db' database
+use my_db
