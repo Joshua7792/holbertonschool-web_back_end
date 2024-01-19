@@ -7,7 +7,8 @@ export default class Car {
 
   cloneCar() {
     const uniqueSymbol = Symbol.for('car');
-    this.constructor[uniqueSymbol] = this.constructor[uniqueSymbol] || class extends this.constructor {};
+    this.constructor[uniqueSymbol] = this.constructor[uniqueSymbol]
+  || class extends this.constructor {};
     return new this.constructor[uniqueSymbol]();
   }
 }
