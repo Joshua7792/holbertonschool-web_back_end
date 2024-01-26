@@ -1,4 +1,4 @@
-export default function getResponseFromAPI () {
+export default function getResponseFromAPI() {
   // Returns a new Promise
   return new Promise((resolve, reject) => {
     setTimeout(() => {
