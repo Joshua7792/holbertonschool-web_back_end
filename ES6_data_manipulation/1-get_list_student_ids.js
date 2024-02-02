@@ -5,5 +5,5 @@ export default function getListStudentIds(array) {
   }
   // map function for the input array of student objects
   // Extract and return only the id of each student
-  return array.map(student => student.id);
+  return array.map((student) => student.id);
 }
