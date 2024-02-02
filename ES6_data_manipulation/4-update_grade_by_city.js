@@ -1,6 +1,6 @@
 export default function updateStudentGradeByCity(students, city, newGrades) {
   // Use the filter function to get students in the specified city
-  return students.filter((student) => student.location === city) // Add parentheses around parameter
+  return students.filter((student) => student.location === city)
     .map((student) => { // Add parentheses around parameter
       // Find the new grade for the student, if it exists
       const gradeObject = newGrades.find((grade) => grade.studentId === student.id);
@@ -8,7 +8,7 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
       // If the student does not have a new grade, set grade to 'N/A'
       return {
         ...student,
-        grade: gradeObject ? gradeObject.grade : 'N/A', // Add trailing comma
+        grade: gradeObject ? gradeObject.grade : 'N/A',
       };
     });
 }
