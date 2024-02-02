@@ -1,8 +1,12 @@
 export default function cleanSet(set, startString) {
-  if (!startString) return ''; // Return an empty string if startString is empty
+// Check if startString is not a string or if it's an empty string
+  if (typeof startString !== 'string' || startString === '') {
+    return ''; // Return an empty string in these cases
+  }
 
-  return [...set] // Convert the set to an array for easy iteration
-      .filter(item => item.startsWith(startString)) // Filter items that start with startString
-      .map(item => item.slice(startString.length)) // Remove startString from the beginning of the item
-      .join('-'); // Join the filtered items with dashes
+  // Process the set and return the formatted string
+  return [...set]
+    .filter((item) => typeof item === 'string' && item.startsWith(startString)) // Ensure item is a string and starts with startString
+    .map((item) => item.slice(startString.length)) // Extract the part of the item after startString
+    .join('-'); // Join the resulting strings with dashes
 }
